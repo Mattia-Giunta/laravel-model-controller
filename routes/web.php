@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\Guest\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+// Route::get('/', function () {
 
-    $data = [
-        'name'=> 'Mattia',
-    ];
+//     $data = [
+//         'name'=> 'Mattia',
+//     ];
 
-    return view('home', $data);
-});
+//     return view('home', $data);
+// });
+
+Route::get("/", [PageController::class, 'index'] )->name('home');
 
 
 Route::get('/about', function () {
